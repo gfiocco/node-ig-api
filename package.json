@@ -1,0 +1,21 @@
+{
+  "name": "node-ig-api",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "faye-websocket": "^0.11.1",
+    "requirejs": "^2.3.2",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gfiocco/node-ig-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gfiocco/node-ig-api/issues"
+  },
+  "homepage": "https://github.com/gfiocco/node-ig-api#readme"
+}
