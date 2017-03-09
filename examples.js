@@ -44,7 +44,5 @@ ig.login(true).then(r => console.log(util.inspect(r.accountType, false, null))).
 // var items = ['L1:CS.D.AUDUSD.TODAY.IP', 'L1:CS.D.EURUSD.TODAY.IP'];
 // var fields = ['UPDATE_TIME', 'BID', 'OFFER'];
 
-// connectToLightstreamer();
-// subscribeToLightstreamer(subscriptionMode, items, fields, 0.5);
-
-// returns csv: epoch_time, epic, [items]
+// ig.connectToLightstreamer();
+// ig.subscribeToLightstreamer(subscriptionMode, items, fields, 0.5);
