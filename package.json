@@ -1,7 +1,7 @@
 {
   "name": "node-ig-api",
   "version": "2.0.1",
-  "description": "",
+  "description": "Node.js IG REST Trading & Streaming API",
   "main": "index.js",
   "dependencies": {
     "faye-websocket": "^0.11.1",
