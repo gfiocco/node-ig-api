@@ -49,7 +49,7 @@ Method | Description
 **[closeAllPositions](#closeAllPositions)** | Closes all open positions
 **[showWorkingOrders](#showWorkingOrders)** | Returns all open working orders for the active account
 **[createOrder](#createOrder)** | Create a working order
-**[deletOrder](#deletOrder)** | Delete existing working order
+**[deleteOrder](#deleteOrder)** | Delete existing working order
 **[deleteAllOrders](#deleteAllOrders)** | Delete all existing working orders
 **[search](#search)** | Search a contract
 **[igVolume](#igVolume)** | Client sentiment (IG volume)
@@ -75,7 +75,7 @@ Method | Description
 ### Account
 
 <a name="login"></a>
-#### login(encryption)
+**login(encryption)**
 
 Store in the file system a Json file containing the IG tokens valid for 12 hours. After the first log-in, this API will allow you to run other IG Rest requests without the need to log-in again. It is pivotal that you log-in before any request.
 
@@ -86,14 +86,14 @@ encryption | encrypting the password before logging-in | Boolean | false   |
 ---
 <a name="logout"></a>
 <br>
-#### logout()
+**logout()**
 
 Destroy the IG tokens stored in the file system and disable them within the IG account.
 
 ---
 <a name="switchAcct"></a>
 <br>
-#### switchAcct(accountId)
+**switchAcct(accountId)
 
 Switch between different accounts (e.g. from CFD to Spread Betting)
 
@@ -104,14 +104,14 @@ accountId | Account code ID | String |         |
 ---
 <a name="acctInfo"></a>
 <br>
-#### acctInfo()
+**acctInfo()**
 
 Returns a list of accounts belonging to the logged-in client
 
 ---
 <a name="acctActivity"></a>
 <br>
-#### acctActivity(from, to, detailed, dealId, pageSize)
+**acctActivity(from, to, detailed, dealId, pageSize)**
 
 Returns the account activity history
 
@@ -126,7 +126,7 @@ pageSize  | Output page size                | Number | 500          |
 ---
 <a name="acctTransactions"></a>
 <br>
-#### acctTransactions(type, from, to, pageSize, pageNumber)
+**acctTransactions(type, from, to, pageSize, pageNumber)**
 
 Returns the transaction history for the specified transaction type and period
 
@@ -141,7 +141,7 @@ pageNumber 	| Output page size                    | Number | 1            |
 ---
 <a name="apiInfo"></a>
 <br>
-#### apiInfo()
+**apiInfo()**
 
 Returns details of all the API Key of the logged-in client
 
@@ -151,14 +151,14 @@ Returns details of all the API Key of the logged-in client
 ### Dealing 
 
 <a name="showOpenPositions"></a>
-#### showOpenPositions()
+**showOpenPositions()**
 
 Returns all open positions for the active account 
 
 ---
 <a name="deal"></a>
 <br>
-#### deal(ticket)
+**deal(ticket)**
 
 Execute a market order in the active account
 
@@ -192,7 +192,7 @@ ticket = {
 ---
 <a name="editPosition"></a>
 <br>
-#### editPosition(dial_id, ticket)
+**editPosition(dial_id, ticket)**
 
 Attach and order to an existing position
 
@@ -214,7 +214,7 @@ ticket = {
 ---
 <a name="closePosition"></a>
 <br>
-#### closePosition(dealId)
+**closePosition(dealId)**
 
 Close an existing position at available market price (i.e. 'orderType': 'MARKET')
 
@@ -225,7 +225,7 @@ dealId    |  ID code of open position | Json object |         |
 ---
 <a name="closeAllPositions"></a>
 <br>
-#### closeAllPositions()
+**closeAllPositions()**
 Closing all open positions at available market price (i.e. 'orderType': 'MARKET')
 
 ----
@@ -234,13 +234,13 @@ Closing all open positions at available market price (i.e. 'orderType': 'MARKET'
 ### Working orders
 
 <a name="showWorkingOrders"></a>
-#### showWorkingOrders()
+**showWorkingOrders()**
 
 Returns any active working order for the active account
 
 <a name="createOrder"></a>
 <br>
-#### createOrder(ticket)
+**createOrder(ticket)**
 
 Create a working order
 
@@ -275,15 +275,15 @@ let ticket = {
 };
 ```
 
-<a name="deletOrder"></a>
+<a name="deleteOrder"></a>
 <br>
-#### deletOrder(orderId)
+**deleteOrder(orderId)**
 
 Delete a specific existing working orders
 
 <a name="deleteAllOrders"></a>
 <br>
-#### deleteAllOrders()
+**deleteAllOrders()**
 
 Delete all existing working orders
 
@@ -293,7 +293,7 @@ Delete all existing working orders
 ### Markets info
 
 <a name="search"></a>
-#### search(searchTerm)
+**search(searchTerm)**
 
 Search a contract with a specific word
 
@@ -303,7 +303,7 @@ searchTerm | Search term | String |         |
 
 <a name="igVolume"></a>
 <br>
-#### igVolume(epics)
+**igVolume(epics)**
 
 Shows IG clients' percentage long/short positions per contract group
 
@@ -313,7 +313,7 @@ epics     |  List of epics     | String Array |         |
 
 <a name="marketNode"></a>
 <br>
-#### marketNode(id)
+**marketNode(id)**
 
 IG API is grouping all their product into three nodes. So you will obtain a generic specification of all contracts by running marketNode(). Thereafter you will find more details by moving into a tree structure with marketNode(id).
 
@@ -323,7 +323,7 @@ id        | Node ID           | Number |    0     |
 
 <a name="histPrc"></a>
 <br>
-#### histPrc(epic, resolution, from, to)
+**histPrc(epic, resolution, from, to)**
 
 IG historical prices for a specific contract (IG API policy allows you to obtain no more than 10000 historical data points per week)
 
@@ -336,7 +336,7 @@ to         | Has to have format: YYYY-MM-DDTHH:MM:SS | String |               |
 
 <a name="epicDetails"></a>
 <br>
-#### epicDetails(epics)
+**epicDetails(epics)**
 
 Shows all details of a contract (epic) or a list of contracts (list of epics)
 
@@ -351,7 +351,7 @@ epics    | List of epics | String Array |         |
 
 <a name="watchlists"></a>
 <br>
-#### watchlists(id)
+**watchlists(id)**
 
 When id is undefined the module returns a summary list of all existing watchlists. Otherwise the module will return details of a specific watchlist
 
@@ -361,7 +361,7 @@ id       | Watchilist ID | String | undefined |
 
 <a name="createWatchlist"></a>
 <br>
-#### createWatchlist(name, epics)
+**createWatchlist(name, epics)**
 
 Create a new watchlist
 
@@ -372,7 +372,7 @@ epics    | List of epics to be added in the newly created watchlist | String Arr
 
 <a name="deleteWatchlist"></a>
 <br>
-#### deleteWatchlist(id)
+**deleteWatchlist(id)**
 
 Delete entire watchlist
 
@@ -382,7 +382,7 @@ id       | Watchilist ID | String |           |
 
 <a name="addEpicWatchlist"></a>
 <br>
-#### addEpicWatchlist(epic, watchlistID)
+**addEpicWatchlist(epic, watchlistID)**
 
 Insert single epic to watchlist
 
@@ -394,7 +394,7 @@ watchlistID | Watchilist ID                      | String |         |
 
 <a name="removeEpicWatchlist"></a>
 <br>
-#### removeEpicWatchlist(epic, watchlistID)
+**removeEpicWatchlist(epic, watchlistID)**
 
 Remove single epic from a specific watchlist
 
@@ -410,16 +410,16 @@ watchlistID | Watchilist ID                          | String |         |
 ### Generic IG REST Requester
 
 <a name="get"></a>
-#### get(url, version)
+**get(url, version)**
 
 <a name="del"></a>
-#### del(url, payload, version)
+**del(url, payload, version)**
 
 <a name="put"></a>
-#### put(url, payload, version)
+**put(url, payload, version)**
 
 <a name="post"></a>
-#### post(url, payload, version)
+**post(url, payload, version)**
 
 Property | Description                     | Type        | Default |
 ---------| --------------------------------| ------------|---------|
@@ -435,13 +435,13 @@ version  | IG version for specific request | Number      |     1   |
 These modules should be used as starting point for your personal IG streaming API. This is probably the first and only implementation of the IG REST Streaming API. 
 
 <a name="removeEpicWatchlist"></a>
-#### connectToLightstreamer()
+**connectToLightstreamer()**
 
 Create a Lightstreamer session by using the tokes that have been retrieved with login(). This will allow you to create a Subscription
 
 <a name="removeEpicWatchlist"></a>
 <br>
-#### subscribeToLightstreamer(subscriptionMode, items, fields, maxFreq)
+**subscribeToLightstreamer(subscriptionMode, items, fields, maxFreq)**
 
 Subscribe to Lightstreamer. In other words, you subscribe to a list of contracts in Lightstreamer and this will stream live data (e.g. price) in your console. You can edit this module to store data in database or automate some trades.
 

@@ -690,7 +690,7 @@ function createOrder(ticket) {
 }
 
 // Delete existing working order
-function deletOrder(dealId) {
+function deleteOrder(dealId) {
 	let response = {};
 	return new Promise((res, rej) => {
 		let close = {};
@@ -1125,7 +1125,7 @@ module.exports = {
 	closeAllPositions: closeAllPositions,
 	createOrder: createOrder,
 	editPosition: editPosition,
-	deletOrder: deletOrder,
+	deleteOrder: deleteOrder,
 	deleteAllOrders: deleteAllOrders,
 	search: search,
 	igVolume: igVolume,
