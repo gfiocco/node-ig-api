@@ -93,7 +93,7 @@ Destroy the IG tokens stored in the file system and disable them within the IG a
 ---
 <a name="switchAcct"></a>
 <br>
-**switchAcct(accountId)
+**switchAcct(accountId)**
 
 Switch between different accounts (e.g. from CFD to Spread Betting)
 
