@@ -22,7 +22,7 @@ const pidCryptUtil = require('./lib/pidcrypt_util');
 
 var lsClient;
 var subscription;
-var demo = true;
+
 var tokensDir = path.join(__dirname, 'tokens.json');
 
 var tokens = require(tokensDir);
@@ -30,7 +30,7 @@ process.env.IG_TOKENS_EXP = tokens.tokens_exp;
 process.env.IG_XST = tokens['x-security-token'];
 process.env.IG_CST = tokens.cst;
 process.env.IG_LIGHTSTREAMER_END_POINT = tokens.lightstreamerEndpoint;
-process.env.IG_CURRENT_ACCT_ID = tokens.currentAccountId;
+var demo = process.env.IG_DEMO==='TRUE'?true:false;
 
 var tokensNull = {
 	'tokens_exp': 0,

@@ -14,14 +14,16 @@ Create environment variables for your IG credentials. This can be done in your O
     $ export IG_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     $ export IG_IDENTIFIER=xxxxxxxxxxxx
     $ export IG_PASSWORD=xxxxxxxxxxxx
+    $ export IG_DEMO=TRUE
 
 or in your Windows CLI as:
 
     $ SET IG_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     $ SET IG_IDENTIFIER=xxxxxxxxxxxx
     $ SET IG_PASSWORD=xxxxxxxxxxxx
+    $ SET IG_DEMO=TRUE
 
-(clearly the "x" values should be your actual IG credentials!)
+(clearly the "x" values should be your actual IG credentials and IG_DEMO should be FALSE for the live version!)
 
 Create a test.js file which requires the package and calls the methods described in the documentation.
 
