@@ -4,7 +4,7 @@ This is the first exhaustive Node.js IG REST Trading & Streaming API.
 Similar APIs are available out there, however they all lack of key functionalities and proper documentation.
 
 <p align="center">
-  <img src="instructions.gif" width="100%" />
+  <img src="https://raw.githubusercontent.com/gfiocco/node-ig-api/master/instructions.gif" />
 </p>
 
 ## Installation & Setup
