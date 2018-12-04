@@ -461,7 +461,7 @@ function showOpenPositions() {
 function deal(ticket) {
 	return new Promise((res, rej) => {
 		// Constraints:
-		if (['EUR', 'GBP', 'USD'].indexOf(ticket.currencyCode) === -1) throw new Error('currencyCode has to be EUR, GBP or USD');
+		if (['AUD', 'USD', 'EUR', 'GBP', 'CHF', 'NZD', 'JPY', 'CAD'].indexOf(ticket.currencyCode) === -1) throw new Error('currencyCode has to be one of: AUD, USD, EUR, GBP, CHF, NZD, JPY, CAD]');
 		if (['BUY', 'SELL'].indexOf(ticket.direction) === -1) throw new Error('direction has to be BUY or SELL');
 		if (!ticket.epic) throw new Error('epic has to be defined');
 		if (!ticket.expiry) throw new Error('expiry has to be defined');
@@ -655,7 +655,7 @@ function showWorkingOrders() {
 function createOrder(ticket) {
 	return new Promise((res, rej) => {
 		// Constraints:
-		if (['EUR', 'GBP', 'USD'].indexOf(ticket.currencyCode) === -1) throw new Error('currencyCode has to be EUR, GBP or USD');
+		if (['AUD', 'USD', 'EUR', 'GBP', 'CHF', 'NZD', 'JPY', 'CAD'].indexOf(ticket.currencyCode) === -1) throw new Error('currencyCode has to be one of: AUD, USD, EUR, GBP, CHF, NZD, JPY, CAD]');
 		if (['BUY', 'SELL'].indexOf(ticket.direction) === -1) throw new Error('direction has to be BUY or SELL');
 		if (!ticket.epic) throw new Error('epic has to be defined');
 		if (!ticket.expiry) throw new Error('expiry has to be defined');
