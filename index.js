@@ -180,7 +180,7 @@ function login(encryption) {
 	/**
 	 * Log in (retrive client and session tokens)
 	 * @param  {boolean} encryption
-	 * @return {json} 
+	 * @return {json}
 	 */
 	return new Promise((res, rej) => {
 		encryption = typeof(encryption) === 'undefined' ? false : encryption;
@@ -834,18 +834,18 @@ function marketNode(id) {
 function histPrc(epic, resolution, from, to) {
 
 	/**
-	 * @param {string} epic 
+	 * @param {string} epic
 	 * @param {string} resolution
-	 *	Permitted values are: DAY, HOUR, HOUR_2, HOUR_3, HOUR_4, MINUTE, MINUTE_10, MINUTE_15, MINUTE_2, MINUTE_3, 
+	 *	Permitted values are: DAY, HOUR, HOUR_2, HOUR_3, HOUR_4, MINUTE, MINUTE_10, MINUTE_15, MINUTE_2, MINUTE_3,
 	 *	MINUTE_30, MINUTE_5, MONTH, SECOND, WEEK
 	 * @param {from} string
-	 *	Permitted values are: 
+	 *	Permitted values are:
 	 *	* @param {to} string
 	 * Permitted values are:
 	 */
 
 	return new Promise((res, rej) => {
-		get('/prices/' + epic + '?resolution=' + resolution + '&startdate=' + from + '&to=' + to, 3)
+		get('/prices/' + epic + '?resolution=' + resolution + '&from=' + from + '&to=' + to, 3)
 			.then(r => {
 				if (r.status !== 200) {
 					rej(r);
@@ -1038,12 +1038,12 @@ function connectToLightstreamer() {
 // Subscribe to lightstreamer
 function subscribeToLightstreamer(subscriptionMode, items, fields, maxFreq) {
 	/**
-	 * @param {string} subscriptionMode 
+	 * @param {string} subscriptionMode
 	 *	Permitted values are: MERGE, DISTINCT, RAW, COMMAND
 	 * @param {array} items
 	 *	Array of epics with format: 'L1:'+epics
 	 * @param {fields} fields
-	 *	Permitted values are: MID_OPEN, HIGH, LOW, CHANGE, CHANGE_PCT, UPDATE_TIME, MARKET_DELAY, MARKET_STATE, BID, OFFER, 
+	 *	Permitted values are: MID_OPEN, HIGH, LOW, CHANGE, CHANGE_PCT, UPDATE_TIME, MARKET_DELAY, MARKET_STATE, BID, OFFER,
 	 *	STRIKE_PRICE, ODDS
 	 * @param {number} maxFreq
 	 *	Number of max updated per second
