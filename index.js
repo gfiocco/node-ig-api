@@ -1036,7 +1036,7 @@ function connectToLightstreamer() {
 }
 
 // Subscribe to lightstreamer
-function subscribeToLightstreamer(subscriptionMode, items, fields, maxFreq) {
+function subscribeToLightstreamer(subscriptionMode, items, fields, maxFreq, callbackOnUpdate) {
 	/**
 	 * @param {string} subscriptionMode
 	 *	Permitted values are: MERGE, DISTINCT, RAW, COMMAND
@@ -1083,22 +1083,7 @@ function subscribeToLightstreamer(subscriptionMode, items, fields, maxFreq) {
 				console.log('Update item lost');
 			},
 
-			onItemUpdate: updateInfo => {
-
-				str.push(new Date().getTime());
-
-				str.push(updateInfo.getItemName().split(':')[1]); // epic without 'L1:'
-
-				updateInfo.forEachField((fieldName, fieldPos, value) => {
-
-					str.push(value);
-
-				});
-
-				//str.push(os.EOL);
-				console.log(str.join(','));
-				str = [];
-			}
+			onItemUpdate: callbackOnUpdate
 		});
 
 		// Subscribe to Lightstreamer
