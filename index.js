@@ -217,6 +217,10 @@ function login(encryption) {
 								rej(e);
 							} else {
 								res(r.body);
+								process.env.IG_TOKENS_EXP = tokens.tokens_exp;
+								process.env.IG_XST = tokens['x-security-token'];
+								process.env.IG_CST = tokens.cst;
+								process.env.IG_LIGHTSTREAMER_END_POINT = tokens.lightstreamerEndpoint;								
 							}
 						});
 					}
