@@ -22,10 +22,10 @@ Create environment variables for your IG credentials. This can be done in your O
 
 or in your Windows CLI as:
 
-    $ SET IG_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    $ SET IG_IDENTIFIER=xxxxxxxxxxxx
-    $ SET IG_PASSWORD=xxxxxxxxxxxx
-    $ SET IG_DEMO=TRUE
+    $env:IG_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    $env:IG_IDENTIFIER=xxxxxxxxxxxx
+    $env:IG_PASSWORD=xxxxxxxxxxxx
+    $env:IG_DEMO=TRUE
 
 (clearly the "x" values should be your actual IG credentials and IG_DEMO should be FALSE for the live version!)
 
